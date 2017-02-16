@@ -51,6 +51,8 @@ $linkColor: $blue;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: $magenta;
 
+$heading1Size: 2.11em;
+
 // Background generator
 // @mixin bodyBackground() {
 // 	@include radial-gradient( rgba($base3,1), rgba(lighten($base3, 20%),1) );
