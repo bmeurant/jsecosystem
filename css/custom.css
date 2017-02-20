@@ -5,7 +5,9 @@
 img.profile {
   border-radius: 50%; }
 
-.reveal section img.profile {
-  margin: 0;
-  width: 1.5em;
+.reveal section img {
   border: none; }
+  .reveal section img.profile {
+    margin: 0;
+    width: 1.5em;
+    border: none; }
