@@ -73,7 +73,7 @@
 					</section>
 					<section>
 						<h3>The mobile revolution</h3>
-						<img style="float: left; width: 40%" src="images/media.jpg">
+						<img style="width: 40%" src="images/media.jpg">
 						<img style="width: 45%" src="images/mobile-desktop.jpg">
 						<small>
 							<ul>
@@ -93,7 +93,7 @@
 					</section>
 					<section>
 						<h3>Web browsers war</h3>
-						<img style="float: left; width: 30%" src="images/web-browsers.jpg">
+						<img style="width: 30%" src="images/web-browsers.jpg">
 						<img style="width: 55%" src="images/web-browsers.png">
 						<small>
 							<ul>
@@ -107,8 +107,9 @@
 						<h2>Web standards</h2>
 					</section>
 					<section>
+						<h3>Evolution of standards</h3>
 						<a href="http://www.evolutionoftheweb.com/#/evolution/day" target="blank">
-							<img style="width: 100%" src="images/web-evolution.jpg">
+							<img style="width: 80%" src="images/web-evolution.jpg">
 						</a>
 					</section>
 					<section>
@@ -147,6 +148,20 @@
 						</small>
 					</section>
 					<section>
+						<h3>Browser compatibility</h3>
+						<a href="http://kangax.github.io/compat-table/es6/"><img src="images/js-table.png"></a>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Tools</h2>
+					</section>
+					<section>
+						<h3>We need tools</h3>
+						<img style="width: 23%;" src="images/ikea-question.png">
+						<img style="width: 65%;" src="images/tools.png">
+					</section>
+					<section>
 						<h3>JavaScript Fatigue</h3>
 						<img style="width: 55%" src="images/javascript-fatigue.png">
 						<small>
@@ -166,11 +181,73 @@
 							</ul>
 						</small>
 					</section>
+					<section>
+						<h3>What kind of tool?</h3>
+						<ul>
+							<li><b>Shim:</b> Normalize browser API</li>
+							<li><b>Polyfill:</b> Conditional implementation of missing browser features</li>
+							<li><b>Library:</b> Set of reusable features / functions / components</li>
+							<li><b>Micro library:</b> A library dedicated to a single feature</li>
+							<li><b>Framework:</b> Set of structured patterns and behaviours that are part of a general programming model</li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Tools!</h2>
-						<img style="width: 75%;" src="images/tools.png">
+						<h2>Cross browser compatibility</h2>
+					</section>
+					<section>
+						<h3>HTML5 Please</h3>
+						<a href="http://html5please.com"><img style="width: 50%" src="images/html5-please.png"></a><br/>
+					</section>
+					<section>
+						<h3>Can I Use?</h3>
+						<a href="http://caniuse.com/"><img src="images/caniuse.png"></a>
+						<small><a href="http://caniuse.com/">http://caniuse.com/</a></small>
+					</section>
+					<section>
+						<h3>Polyfills</h3>
+						<small>A multitude of dedicated <b>micro libraries</b>, mostly composed of few functions implementing a feature on engines that do not yet support that feature.</small>
+						<small style="width: 45%">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"><img src="images/polyfill.png"></a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a>
+						</small>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"><img style="width: 45%" src="images/polyfill2.png"></a><br/>
+					</section>
+					<section>
+						<h3>Modernizr</h3>
+						<small><b>feature detection</b>: executes code / polyfill based on the <i>actual capabilities</i> of the browser<br/></small>
+						<a href="https://modernizr.com/"><img style="width: 40%" src="images/modernizr.png"></a>
+						<small style="width: 55%; vertical-align: middle;">
+<pre><code>if (Modernizr.awesomeNewFeature) {
+  showOffAwesomeNewFeature();
+} else {
+  getTheOldLameExperience();
+}
+</code></pre>
+<pre><code>npm install -g modernizr</code></pre>
+						<a href="https://modernizr.com/">https://modernizr.com/</a>
+						</small>
+					</section>
+					<section>
+						<h3>Autoprefixer</h3>
+						<small style="width: 100%">dealing with CSS vendor prefixes<br/></small>
+						<small style="width:50%;vertical-align: middle;">
+							<a href="https://github.com/postcss/autoprefixer"><img src="images/autoprefixer.png"></a>
+							<a href="https://github.com/postcss/autoprefixer">https://github.com/postcss/autoprefixer</a>
+						</small>
+						<small style="width: 45%; vertical-align: middle;"><b>source</b><br/>
+<pre><code>a {
+  transition: transform 1s
+}
+</code></pre>
+<b>generated</b><br/>
+<pre><code>a {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s
+}</code></pre>
+						</small>
 					</section>
 				</section>
 			</div>
