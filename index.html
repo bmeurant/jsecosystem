@@ -238,13 +238,12 @@
 						<h2>Libraries</h2>
 					</section>
 					<section>
-						<h3>Lifetime</h3>
-						<img src="images/GOT.png">
-					</section>
-					<section>
 						<h3>Micro libraries</h3>
-						<a href="http://microjs.com"><img style="width: 40%;" src="images/microjs.png"></a>
-						<small style="vertical-align: middle; width: 40%;">
+						<small style="width: 60%; vertical-align: middle;">
+							<a href="http://microjs.com"><img style="width: 70%;" src="images/microjs.png"></a><br/>
+							<a href="http://microjs.com">http://microjs.com</a>
+						</small>
+						<small style="vertical-align: middle; width: 39%;">
 							<ul>
 								<li>Thousands of micro libraries</li>
 								<li>Lightweight</li>
@@ -253,7 +252,11 @@
 								<li>Full control of the js size</li>
 								<li>Popularity based on Github stars</li>
 							</ul>
-							<br/><br/><a href="http://microjs.com">http://microjs.com</a>
+							<br/><br/><br/>
+							<ul>
+								<li><a href="http://www.codemag.com/Article/1501101">Why Micro JavaScript Library Should Be Used in Your Next Application</a></li>
+								<li><a href="https://ponyfoo.com/articles/the-micro-library-phenomenon">The Micro Library Phenomenon</a></li>
+							</ul>
 						</small>
 					</section>
 					<section>
@@ -282,15 +285,168 @@
 						</small>
 					</section>
 					<section>
+						<h3>Lifetime</h3>
+						<img src="images/GOT.png">
+					</section>
+					<section>
 						<h3>General Libraries</h3>
-						<small>
+						<small style="text-align: left;">
+							Large libraries extending JavaScript APIs and general functions to enrich and/or standardize the programming model. Unlike frameworks, they do not hold opinions about your app's general design. 
+							<br/>
+						</small>
+						<a href="http://prototypejs.org/"><img src="images/prototypejs.png"></a>
+						<a href="https://jquery.com/"><img src="images/jquery.png"></a>
+						<a href="http://underscorejs.org/"><img src="images/underscorejs.png"></a>
+						<a href="https://lodash.com/"><img src="images/lodash.png"></a>
+						<a href="http://reactivex.io/rxjs/"><img src="images/rxjs.png"></a>
+						<small style="margin-top: 1em;">
 							<ul>
-								<li><b style="text-decoration: line-through">Prototype:</b> DOM manipulation & events, object-oriented API, AJAX requests. Lost the game.</li>
-								<li><b>jQuery:</b> DOM manipulation & events, AJAX requests, utility functions, cross browser maganement.</li>
-								<li><b>Underscore.js & lodash:</b> both libraries provide hundred of utility functions to extend the basic JavaScript API such as <i>map, filter, reduce</i></li>
-								<li><b>RxJS:</b></li>
+								<li><b style="text-decoration: line-through"><a href="http://prototypejs.org/">Prototype</a>:</b> DOM manipulation & events, object-oriented API, AJAX requests. Lost the game.</li>
+								<li><b><a href="https://jquery.com/">jQuery</a>:</b> DOM manipulation & events, AJAX requests, utility functions, cross browser maganement.</li>
+								<li><b><a href="http://underscorejs.org/">Underscore.js</a> & <a href="https://lodash.com/">lodash</a>:</b> both libraries provide hundred of utility functions to extend the basic JavaScript API such as <i>map, filter, reduce</i></li>
+								<li><b><a href="http://reactivex.io/rxjs/">RxJS</a>:</b> extends the API with reactive programming utilities using Observables</li>
 								<li>...</li>
 							</ul>
+						</small>
+					</section>
+					<section>
+						<h3>jQuery</h3>
+						<small style="width: 100%;">
+							The incontestable leader<br/><br/>
+						</small>
+						<small style="width: 100%; text-align: left;">
+							<b>DOM Manipulation:</b>
+<pre><code>// Changing the HTML of an element.
+$( "#myDiv p:first" ).html( "New <strong>first</strong> paragraph!" );
+
+// Manipulating a single attribute.
+$( "#myDiv a:first" ).attr( "href", "newDestination.html" );</code></pre>
+							<b>Events:</b>
+<pre><code>var hiddenBox = $( "#banner-message" );
+$( "#button-container button" ).on( "click", function( event ) {
+  hiddenBox.show();
+});</code></pre>
+							<b>Ajax:</b>
+<pre><code>$.ajax({
+  url: "/api/getWeather",
+  data: {
+    zipcode: 97201
+  },
+  success: function( result ) {
+    $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+  }
+});</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3>Do I still need jQuery?</h3>
+						<small style="width: 100%"><i>"jQuery has helped tremendously to move the Web forward"</i></small>
+						<small style="text-align: left; vertical-align: middle; margin-right: .25em;">
+							<b>Today's critics:</b><br/><br/>
+							<ul>
+								<li>it is fat (255 kB)</li>
+								<li>it is not enough modular (all in one)</li>
+								<li>it is slow (especially on mobile)</li>
+								<li>it prevent learning JavaScript properly</li>
+								<li>it leads to bad code and practices</li>
+								<li>You do not need everything</li>
+								<li>You do not need it anymore</li>
+							</ul>
+						</small>
+						<a href="http://youmightnotneedjquery.com/"><img style="width: 35%" src="images/nojquery.png"></a>
+						<small style="width: 40%; text-align: left;">
+							<ul>
+								<li><a href="http://youmightnotneedjquery.com/">You might not need jQuery</a></li>
+								<li><a href="https://blog.garstasio.com/you-dont-need-jquery/why-not/">You Don't Need jQuery (anymore)</a></li>
+								<li><a href="http://lea.verou.me/2015/04/jquery-considered-harmful/">jQuery considered harmful</a></li>
+							</ul>
+						</small>
+						<small style="width: 59%; text-align: left;">
+							<ul>
+								<li><a href="http://learn.onemonth.com/why-you-should-learn-jquery-before-javascript">Why You Should Learn jQuery Before JavaScript</a></li>
+								<li><a href="https://www.sitepoint.com/do-you-really-need-jquery/">Do You Really Need jQuery?</a></li>
+								<li><a href="http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/">10 Tips for Writing JavaScript without jQuery</a></li>
+							</ul>
+						</small>
+					</section>
+					<section>
+						<h3>lodash</h3>
+						<small style="width: 100%"><i>"A modern JavaScript utility library delivering modularity, performance & extras."</i></small>
+						<small style="text-align: left; vertical-align:middle; width: 36%;">
+							<ul style="width: 95%">
+								<li>Overall leader for utility libs</li>
+								<li>Relatively light</li>
+								<li>In the browser or via npm</li>
+<pre><code><script src="lodash.js"></script></code></pre>
+<pre><code>$ npm i -g npm
+$ npm i --save lodash</code></pre>
+								<li>Extreme modularity</li>
+<pre><code>// Load the full build.
+var _ = require('lodash');
+// Load the core build.
+var _ = require('lodash/core');
+ 
+// Load method categories.
+var array = require('lodash/array');
+ 
+// Cherry-pick methods.
+var at = require('lodash/at');</code></pre>
+							</ul>
+						</small>
+						<img style="width:12%; vertical-align:middle;" src="images/lodash-categories.png">
+						<small style="text-align: left; vertical-align:middle; width: 49%;">
+<pre><code>_.chunk(['a', 'b', 'c', 'd'], 2);
+// => [['a', 'b'], ['c', 'd']]</code></pre>
+<pre><code>_.forEach([1, 2], function(value) {
+  console.log(value);
+});
+// => Logs `1` then `2`.</code></pre>
+<pre><code>_.gt(3, 1);
+// => true</code></pre>
+<pre><code>_.max([4, 2, 8, 6]);
+// => 8</code></pre>
+<pre><code>_.random(0, 5);
+// => an integer between 0 and 5</code></pre>
+<pre><code>_.has({ 'a': { 'b': 2 }}, 'a');
+// => true</code></pre>
+<pre><code>_.camelCase('Foo Bar');
+// => 'fooBar'</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3>RxJS</h3>
+						<small style="width: 100%"><i>"Think of RxJS as Lodash for events."</i></small>
+						<small style="text-align: left; vertical-align:middle; width: 30%;">
+							<ul style="width: 95%">
+								<li>For reactive & functional programming</li>
+								<li>Events oriented</li>
+								<li>Observer / Observable patterns</li>
+								<li>Subscriptions</li>
+								<li>Collections & iterators</li>
+								<li>State management, purity</li>
+							</ul>
+						</small>
+						<small style="text-align: left; vertical-align:middle; width: 69%;">
+<pre><code>var button = document.querySelector('button');
+button.addEventListener('click', () => console.log('Clicked!'));</code></pre>
+<pre><code class="rxjs">var button = document.querySelector('button');
+Rx.Observable.fromEvent(button, 'click')
+  .subscribe(() => console.log('Clicked!'));</code></pre>
+<pre><code class="rxjs">var button = document.querySelector('button');
+Rx.Observable.fromEvent(button, 'click')
+  .scan(count => count + 1, 0)
+  .subscribe(count => console.log(`Clicked ${count} times`));</code></pre>
+<pre><code class="rxjs">var button = document.querySelector('button');
+Rx.Observable.fromEvent(button, 'click')
+  .throttleTime(1000)
+  .map(event => event.clientX)
+  .scan((count, clientX) => count + clientX, 0)
+  .subscribe(count => console.log(count));</code></pre>
+<pre><code class="rxjs">var observer = {
+  next: x => console.log('Observer got a next value: ' + x),
+  error: err => console.error('Observer got an error: ' + err),
+  complete: () => console.log('Observer got a complete notification'),
+};</code></pre>
 						</small>
 					</section>
 					<section>
