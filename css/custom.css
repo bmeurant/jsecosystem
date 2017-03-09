@@ -1,3 +1,7 @@
+body {
+  background: #fff;
+  background-color: #fff; }
+
 img.profile {
   border-radius: 50%; }
 
@@ -20,3 +24,6 @@ img.profile {
   border: 4px solid #B7178C;
   outline: 2px solid white;
   outline-offset: -5px; }
+
+.reveal section .logos img {
+  height: 55px; }
