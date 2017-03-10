@@ -38,4 +38,13 @@ img.profile {
             height: 55px;
         }
     }
+
+    ul.code-list {
+        list-style-type: none;
+        font-size: 0.55em;
+        
+        li {
+            margin: 20px auto;
+        }
+    }
 }

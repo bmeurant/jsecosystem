@@ -27,3 +27,9 @@ img.profile {
 
 .reveal section .logos img {
   height: 55px; }
+
+.reveal ul.code-list {
+  list-style-type: none;
+  font-size: 0.55em; }
+  .reveal ul.code-list li {
+    margin: 20px auto; }

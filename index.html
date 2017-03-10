@@ -237,7 +237,7 @@
 				</section>
 				<section>
 					<section>
-						<h2>Libraries: more powerfull APIs</h2>
+						<h2>Libraries: APIs & Components</h2>
 					</section>
 					<section>
 						<h3>General Libraries</h3>
@@ -297,13 +297,13 @@ $( "#button-container button" ).on( "click", function( event ) {
 						<small style="text-align: left; vertical-align: middle; margin-right: .25em;">
 							<b>Today's critics:</b><br/><br/>
 							<ul>
-								<li>it is fat (255 kB)</li>
+								<li>it is fat (270 kB / 85 kB)</li>
 								<li>it is not enough modular (all in one)</li>
 								<li>it is slow (especially on mobile)</li>
 								<li>it prevent learning JavaScript properly</li>
 								<li>it leads to bad code and practices</li>
-								<li>You do not need everything</li>
-								<li>You do not need it anymore</li>
+								<li>you do not need everything</li>
+								<li>you do not need it anymore</li>
 							</ul>
 						</small>
 						<a href="http://youmightnotneedjquery.com/"><img style="width: 35%" src="images/nojquery.png"></a>
@@ -403,9 +403,9 @@ Rx.Observable.fromEvent(button, 'click')
 						</small>
 					</section>
 					<section>
-						<h3>Catalogs of UI Components</h3>
+						<h3>UI Components</h3>
 						<small>
-							Collections of GUI widgets: Data Grids, Tree Views, Forms, Sliders, Calendars, etc.
+							GUI widgets: Data Grids, Tree Views, Forms, Sliders, Calendars, etc.
 							<br/><br/>
 						</small>
 						<small class="logos">
@@ -414,47 +414,141 @@ Rx.Observable.fromEvent(button, 'click')
 							<a href="http://getbootstrap.com/"><img src="images/TwitterBootstrap.png"></a>
 							<a href="http://foundation.zurb.com/"><img src="images/foundation-logo.jpg"></a>
 							<a href="http://materializecss.com/"><img src="images/materialize-logo.png"></a>
-							<a href="https://d3js.org/"><img src="images/Logo_D3.png"></a>
 						</small>
 						<small style="margin-top: 1em;">
 							<ul>
 								<li><b style="text-decoration: line-through"><a href="https://yuilibrary.com/">Yui</a>:</b> catalog of HTML, JavaScript and HTML components. Discontinued since 2014.</li>
 								<li><b><a href="https://jqueryui.com/">jQuery UI</a>:</b> <i>"curated set of UI interactions, effects, widgets, and themes built on top of jQuery"</i></li>
 								<li><b><a href="http://getbootstrap.com/">Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a> & <a href="http://materializecss.com/">Materialize</a>:</b> CSS frameworks with JavaScript UI components</li>
-								<li><b><a href="https://d3js.org/">D3.js</a>:</b> Interactive data visualization components, bubble charts, activity calendar, maps, words clouds, etc. </li>
+								<li><b>Single UI components:</b> <a href="http://codeseven.github.io/toastr/">toastr</a>, <a href="https://select2.github.io/">select2</a>, <a href="http://amsul.ca/pickadate.js/date/">pickadate</a>, etc.</li>
 								<li>...</li>
 							</ul>
 						</small>
 					</section>
 					<section>
-						<h3>jQuery UI</h3>
+						<h3>Jquery UI</h3>
+						<small style="vertical-align: middle;">
+							<ul style="display: inline;">
+								<li>Catalog of Interactions, Widgets, Effects</li>
+								<li>Configuration via options</li>
+								<li>Depends on jQuery core</li>
+								<li>All in one but you can make custom builds</li>
+								<li>Via CDN, bower, npm</li>
+								<li>500 kB / 250 kB</li>
+							</ul>
+							<br/>
+							<a href="https://jqueryui.com">https://jqueryui.com</a>
+						</small>
+						<img style="width: 13%" src="images/jqueryui-widgets.png"/>
+						<small style="width:35%; vertical-align: middle;">
+							<img src="images/jqueryui-datepicker.png"/>
+<pre><code>$(function() {
+  $("#datepicker").datepicker();
+});
+</code></pre>
+<pre><code data-trim>
+<p>Date: <input id="datepicker"></p>
+</code></pre>
+						</small>
 					</section>
 					<section>
 						<h3>Bootstrap</h3>
+						<small style="width: 45%; vertical-align:middle;">
+							<ul>
+								<li>CSS Framework</li>
+								<li>JavaScript UI plugins & components</li>
+								<li>Configuration via options</li>
+								<li>Depends on jQuery core</li>
+								<li>Plugins can be included all at once or individually</li>
+								<li>Via CDN, bower, npm (preprocessors)</li>
+								<li>37 kB (minified)</li>
+								<li><a href="http://getbootstrap.com/javascript">Bootstrap</a> is the leader but <a href="http://foundation.zurb.com/sites/docs/javascript.html">Foundation</a> is equivalent.</li>
+							</ul>
+						</small>
+						<img style="width: 13%" src="images/bootstrap-widgets.png"/>
+						<small style="width:35%; vertical-align: middle;">
+							<img src="images/bootstrap-dropdown.png"/>
+<pre><code><div class="dropdown">
+  <button type="button" data-toggle="dropdown" aria-expanded="false">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    ...
+  </ul>
+</div>
+</code></pre>
+<pre><code>$('.dropdown-toggle').dropdown();
+</code></pre>
+						</small>
 					</section>
 					<section>
-						<h3>D3.js</h3>
+						<h3>Single UI components</h3>
+						<small style="width: 49%">
+							<a href="http://codeseven.github.io/toastr/"><img src="images/toastr-logo.png"/></a><br/><br/>
+							<i>toastr is a Javascript library for non-blocking notifications</i><br/>
+							<img src="images/toastr.png"/>
+						</small>
+						<small style="width: 49%">
+							<a href="https://select2.github.io/"><img src="images/select2-logo.png"/></a><br/><br/>
+							<i>customizable select box with support for searching, tagging, infinite scrolling, ...</i>
+							<img src="images/select2.png"/>
+						</small>
+						<small>
+							And many, many others...
+						</small>
 					</section>
 					<section>
 						<h3>Specialized Libraries</h3>
+						<small class="logos">
+							<a href="https://momentjs.com/"><img src="images/moment-logo.png"></a>
+							<a href="https://d3js.org/"><img src="images/Logo_D3.png"></a>
+							<a href="https://facebook.github.io/immutable-js/"><img src="images/immutable-logo.png"/></a>
+							<a href="https://mozilla.github.io/pdf.js/"><img src="images/pdfjs-logo.png"/></a>
+						</small>
 						<small>
+							<br/>
 							<ul>
-								<li><b><a href="https://momentjs.com/">Moment.js</a>:</b></li>
-								<li><b><a href="https://facebook.github.io/immutable-js/">Immutable.js</a>:</b></li>
-								<li><b><a href="https://mozilla.github.io/pdf.js/">PDF.js</a>:</b></li>
-								<li><b>UI components:</b> <a href="http://codeseven.github.io/toastr/">toastr</a>, <a href="https://select2.github.io/">select2</a>, <a href="http://amsul.ca/pickadate.js/date/">pickadate</a>, etc.</li>
+								<li><b><a href="https://momentjs.com/">Moment.js</a> & <a href="https://momentjs.com/timezone/">Moment Timezone</a></b>: Libraries for date, time and timezone manipulation, comparison, parsing, displaying, etc.</li>
+								<li><b><a href="https://d3js.org/">D3.js</a>:</b> Library for building interactive data visualization components based on documents, bubble charts, activity calendar, maps, words clouds, etc. </li>
+								<li><b><a href="https://facebook.github.io/immutable-js/">Immutable.js</a>:</b> Facebook library to create and manipulate immutable data structures.</li>
+								<li><b><a href="https://mozilla.github.io/pdf.js/">PDF.js</a>:</b> Mozilla library to parse and render pdf files.</li>
 								<li>...</li>
 							</ul>
 						</small>
 					</section>
 					<section>
 						<h3>Moment.js</h3>
+						<small style="width: 100%">
+							<a href="https://momentjs.com/">Moment.js</a> is the JavaScript reference library for date time manipulations.
+						</small>
+						<small>
+							<a href="https://momentjs.com/">Moment.js</a> is an all in one library (without locales, 20 kB minified and gzipped). It is higly configurable and extensible via plugins. Locales can be included individually with bundlers / build tools.<br/><br/>
+						</small>
+						<small>
+							<ul class="code-list">
+								<li>Format dates:</li>
+								<li>Relative time:</li>
+								<li>Calendar:</li>
+								<li>Locales:<br/></li>
+							</ul>
+						</small>
+						<small style="width: 75%; text-align: left;">
+<pre><code>moment().format('MMMM Do YYYY, h:mm:ss a'); // March 10th 2017, 12:45:16 am</code></pre>
+<pre><code>moment("20111031", "YYYYMMDD").fromNow(); // 5 years ago</pre></code>
+<pre><code>moment().subtract(6, 'days').calendar();  // Last Saturday at 00:58</pre></code>
+<pre><code>moment.locale();         // fr
+moment().format('LL');   // 10 mars 2017</pre></code>
+						</small>
 					</section>
 					<section>
-						<h3>Immutable.js</h3>
-					</section>
-					<section>
-						<h3>UI components</h3>
+						<h3>D3.js</h3>
+						<small>
+							<a href="https://d3js.org/">D3.js</a> is a library for manipulating documents based on data. It uses HTML, SVG & CSS to display documents as interactive data visualization such as graphs, trees, maps, clouds, histograms, etc.<br/><br/>
+						</small>
+						<img src="images/d3.png"/>
+						<small>
+						</small>
 					</section>
 					<section>
 						<h3>Micro libraries</h3>
