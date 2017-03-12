@@ -646,12 +646,105 @@ moment().format('LL');   // 10 mars 2017</pre></code>
 					</section>
 					<section>
 						<h3>CSS Frameworks</h3>
-						<small>
+						<small class="logos">
+							<a href="http://getbootstrap.com/"><img src="images/TwitterBootstrap.jpg"></a>
+							<a href="http://foundation.zurb.com/"><img src="images/foundation-logo.jpg"></a>
+							<a href="http://materializecss.com/"><img src="images/materialize-logo.jpg"></a>
+						</small>
+						<br/>
+						<small style="width: 49%">
 							<ul>
-								<li><b>Bootstrap:</b></li>
-								<li><b>Foundation:</b></li>
-								<li><b>Materialize CSS:</b></li>
+								<li>Mobile first: responsive design, media queries.</li>
+								<li>Browser compatibility.</li>
+								<li>Structuring grid system based on Flexbox.</li>
+								<li>Hundred of CSS base styles & classes.</li>
+								<li>CSS components: buttons, tabs, navigation, panels, badges, etc.</li>
+								<li>Strong impact on CSS and HTML design & structure</li>
+								<li>All in one distribution or custom builds.</li>
+								<li>Preprocessor distributions (Sass, Less).</li>
+								<li>Very popular, very criticized.</li>
+								<li>Tens of other micro CSS frameworks.</li>
 							</ul>
+						</small>
+						<img style="width: 49%" src="images/bootstrap-general.jpg"/>
+					</section>
+					<section>
+						<h3>Bootstrap Grid system</h3>
+						<small style="width: 30%">
+							<ul>
+								<li>Based on Flexbox</li>
+								<li>Rows and Columns</li>
+								<li>12 columns layout</li>
+								<li>Mobile first & responsive</li>
+								<li>Specific CSS & HTML structure</li>
+								<li>Using Sass mixins or predefined classes</li>
+								<li>Reordering (push / pull)</li>
+								<li>Customizing (offset, gutter)</li>
+								<li>Nesting</li>
+								<li>...</li>
+							</ul>
+						</small>
+						<div style="width: 68%; display: inline-block;">
+							<small style="width: 55%">
+								Desktop: 
+								<img src="images/bootstrap-desktop.jpg"/>
+							</small>
+							<small style="width: 43%">
+								Mobile:
+								<img src="images/bootstrap-mobile.jpg"/>
+							</small>
+							<small style="width: 100%">
+<pre><code><!-- Stack the columns on mobile by making one full-width 
+and the other half-width -->
+<div class="row">
+  <div class="col col-md-8">.col .col-md-8</div>
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+</div>
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% 
+wide on desktop -->
+<div class="row">
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+</div>
+
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row">
+  <div class="col-6">.col-6</div>
+  <div class="col-6">.col-6</div>
+</div>
+</code></pre>
+							</small>
+						</div>
+					</section>
+					<section>
+						<h3>Bootstrap components</h3>
+						<small style="width: 38%">
+							<ul>
+								<li>Alerts</li>
+								<li>Badges</li>
+								<li>Breadcrumbs</li>
+								<li>Buttons</li>
+								<li>Dropdowns</li>
+								<li>Forms</li>
+								<li>Groups</li>
+								<li>Modals</li>
+								<li>Navbars</li>
+								<li>Pagination</li>
+								<li>Progress</li>
+								<li>Tooltips</li>
+								<li>...</li>
+							</ul>
+						</small>
+						<small style="width: 60%">
+							<img src="images/bootstrap-badges.jpg"/>
+							<img src="images/bootstrap-breadcrumbs.jpg"/>
+							<img src="images/bootstrap-buttons.jpg"/>
+							<img src="images/bootstrap-inputs.jpg"/>
+							<img src="images/bootstrap-navbars.jpg"/>
+							<img src="images/bootstrap-pagination.jpg"/>
+							<img src="images/bootstrap-progress.jpg"/>
 						</small>
 					</section>
 					<section>
@@ -682,7 +775,7 @@ moment().format('LL');   // 10 mars 2017</pre></code>
 						<a href="http://engineering.paiza.io/entry/2015/03/12/145216"><img src="images/data-binding.jpg"/></a>
 					</section>
 					<section>
-						<h3>How to choose?</h3>
+						<h3>To choose is to renounce...</h3>
 						<a href="http://www.commitstrip.com/en/2015/09/16/how-to-choose-the-right-javascript-framework/"><img style="width: 70%" src="images/fwk-choice.jpg"/></a>
 					</section>
 				</section>
@@ -693,7 +786,7 @@ moment().format('LL');   // 10 mars 2017</pre></code>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="js/reveal.min.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
