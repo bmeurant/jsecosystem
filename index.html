@@ -144,7 +144,7 @@
 					</section>
 					<section>
 						<h3>Can I Use?</h3>
-						<a href="http://caniuse.com/"><img src="images/caniuse.jpg"></a>
+						<a href="http://caniuse.com/"><img style="width: 75%" src="images/caniuse.jpg"></a><br/>
 						<small><a href="http://caniuse.com/">http://caniuse.com/</a></small>
 					</section>
 				</section>
@@ -334,7 +334,7 @@ $( "#button-container button" ).on( "click", function( event ) {
 								<li>Overall leader for utility libs</li>
 								<li>Relatively light</li>
 								<li>In the browser or via npm</li>
-<pre><code><script src="lodash.js"></script></code></pre>
+<pre><code>&lt;script src="lodash.js"></script></code></pre>
 <pre><code>$ npm i -g npm
 $ npm i --save lodash</code></pre>
 								<li>Extreme modularity</li>
@@ -1090,32 +1090,41 @@ render: function () {
 						<h3>JavaScript Frameworks scorecard</h3>
 						<a href="https://fr.slideshare.net/mraible/comparing-hot-javascript-frameworks-angularjs-emberjs-and-reactjs-springone-2gx-2015"><img style="width:80%;" src="images/fwk-scorecard.jpg"></a>
 						<small>
-							<i>But remember: These are just <a href="https://twitter.com/mraible">Matt Raible</a>personal opinions!</i>
+							<i>But remember: These are just <a href="https://twitter.com/mraible">Matt Raible</a> personal opinions!</i>
 						</small>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Industrialization</h2>
-						<small>
+					</section>
+					<section>
+						<h3>Why?</h3>
+						<small style="width: 49%; vertical-align: middle;">
+							<img src="images/industrialize.jpg"/>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
 							<ul>
-								<li><a href="http://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">http://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack</a></li>
+								<li>Efficient & powerful build tools</li>
+								<li>Universal browser support - ES versions</li>
+								<li>Internal modules & components</li>
+								<li>Modular, dynamic & maintainable CSS</li>
+								<li>Third party dependencies</li>
+								<li>Testing, quality, coverage, etc.</li>
+								<li>File & directory structure</li>
+								<li>Templates, assets, etc.</li>
+								<li>Packaging, deployment, environment, etc.</li>
+								<li>Performances, "ready to production"</li>
 							</ul>
 						</small>
 					</section>
 					<section>
-						<h3>Why?</h3>
-					</section>
-					<section>
 						<h3>Task runners</h3>
-						<small>
-							<ul>
-								<li>npm scripts</li>
-								<li>Grunt</li>
-								<li>Gulp</li>
-								<li>Broccoli</li>
-								<li>...</li>
-							</ul>
+						<small class="logos">
+							<img src="images/npm-scripts-logo.jpg"/>
+							<img src="images/grunt-logo.jpg"/>
+							<img src="images/gulp-logo.jpg"/>
+							<img src="images/broccoli-logo.jpg"/>
 						</small>
 						<small>
 							<ul>
@@ -1124,25 +1133,8 @@ render: function () {
 								<li><a href="https://blog.cozycloud.cc/technic/2014/06/18/task-runners-comparison/">JS task runner comparison</a></li>
 								<li><a href="https://appendto.com/2015/08/why-use-a-task-runner-like-gulp/">Why use a task runner like Gulp?</a></li>
 								<li><a href="http://jpsierens.com/task-runners-a-comparison-between-grunt-gulp-broccoli-and-mimosa/">Task runners, a comparison between Grunt, Gulp, Broccoli and Mimosa</a></li>
-								<li><a href="http://alfapeople.com/javascript-build-tools-best-practice/">JavaScript Build Tools – Best Practice</a></li>			
-							</ul>
-						</small>
-					</section>
-					<section>
-						<h3>Languages that compile to JavaScript</h3>
-						<small>
-							<ul>
-								<li>Typescript</li>
-								<li>Coffeescript</li>
-							</ul>
-						</small>
-						<small>
-							<ul>
-								<li><a href="https://blog.heapanalytics.com/goodbye-coffeescript-hello-typescript/">Goodbye Coffeescript, Hello Typescript</a></li>
-								<li><a href="https://bytescout.com/blog/2016/07/javascript-vs-coffeescript-vs-typescript.html">JavaScript vs Typescript vs JavaScript</a></li>
-								<li><a href="https://www.quora.com/Should-I-learn-CoffeeScript-TypeScript-or-Dart">Should I learn Coffeescript, Typescript or Dart?</a></li>
-								<li><a href="https://fr.slideshare.net/NeilGreen1/type-script-vs-coffeescript-vs-es6">Typescript vs Coffeescript vs ES6</a></li>
-								<li><a href="https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS">List of languages that compile to JS</a></li>
+								<li><a href="http://alfapeople.com/javascript-build-tools-best-practice/">JavaScript Build Tools – Best Practice</a></li>
+								<li><a href="http://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">http://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack</a></li>			
 							</ul>
 						</small>
 					</section>
@@ -1323,6 +1315,24 @@ render: function () {
 							</ul>
 						</small>
 					</section>
+          			<section>
+						<h3>Languages that compile to JavaScript</h3>
+						<small>
+							<ul>
+								<li>Typescript</li>
+								<li>Coffeescript</li>
+							</ul>
+						</small>
+						<small>
+							<ul>
+								<li><a href="https://blog.heapanalytics.com/goodbye-coffeescript-hello-typescript/">Goodbye Coffeescript, Hello Typescript</a></li>
+								<li><a href="https://bytescout.com/blog/2016/07/javascript-vs-coffeescript-vs-typescript.html">JavaScript vs Typescript vs JavaScript</a></li>
+								<li><a href="https://www.quora.com/Should-I-learn-CoffeeScript-TypeScript-or-Dart">Should I learn Coffeescript, Typescript or Dart?</a></li>
+								<li><a href="https://fr.slideshare.net/NeilGreen1/type-script-vs-coffeescript-vs-es6">Typescript vs Coffeescript vs ES6</a></li>
+								<li><a href="https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS">List of languages that compile to JS</a></li>
+							</ul>
+						</small>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -1337,10 +1347,10 @@ render: function () {
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					//{ src: 'plugin/markdown/marked.js' },
+					//{ src: 'plugin/markdown/markdown.js' },
+					//{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
