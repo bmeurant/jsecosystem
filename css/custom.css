@@ -25,7 +25,13 @@ img.profile {
   outline: 2px solid white;
   outline-offset: -5px; }
 
-.reveal section .logos img {
+.reveal section small.logos * {
+  vertical-align: middle; }
+
+.reveal section small.logos > * {
+  margin: auto .25em; }
+
+.reveal section small.logos img {
   height: 55px; }
 
 .reveal ul.code-list {

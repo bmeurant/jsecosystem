@@ -34,8 +34,18 @@ img.profile {
             outline-offset: -5px;
         }
 
-        .logos img {
-            height: 55px;
+        small.logos {
+            * {
+                vertical-align: middle;
+            }
+
+            & > * {
+                margin: auto .25em;
+            }
+
+            img {
+                height: 55px;
+            }
         }
     }
 
