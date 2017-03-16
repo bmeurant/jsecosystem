@@ -29,10 +29,11 @@ img.profile {
   vertical-align: middle; }
 
 .reveal section small.logos > * {
-  margin: auto .25em; }
+  margin: 0 .25em auto; }
 
 .reveal section small.logos img {
-  height: 55px; }
+  height: 55px;
+  margin-top: 0; }
 
 .reveal ul.code-list {
   list-style-type: none;

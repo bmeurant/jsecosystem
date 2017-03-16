@@ -40,11 +40,12 @@ img.profile {
             }
 
             & > * {
-                margin: auto .25em;
+                margin: 0 .25em auto;
             }
 
             img {
                 height: 55px;
+                margin-top: 0;
             }
         }
     }

@@ -1114,28 +1114,327 @@ render: function () {
 								<li>File & directory structure</li>
 								<li>Templates, assets, etc.</li>
 								<li>Packaging, deployment, environment, etc.</li>
-								<li>Performances, "ready to production"</li>
+								<li>Performances, "ready for prod"</li>
+							</ul>
+						</small>
+					</section>
+					<section>
+						<h3>Package managers</h3>
+						<small class="logos" style="width: 100%; margin-bottom: 3em;">
+							<a href="https://www.npmjs.com/"><img src="images/npm-logo.jpg"/></a>
+							<a href="https://bower.io/"><img src="images/bower-logo.jpg"/></a>
+							<a href="https://yarnpkg.com/"><img src="images/yarn-logo.jpg"/></a>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul>
+								<li>Package definition</li>
+								<li>Manifest file</li>
+								<li>Metadata: description, authors, version</li>
+								<li>Dependencies: direct or indirect</li>
+								<li>Semantic versioning</li>
+								<li>Registries: search, deownload, publish</li>
+							</ul>
+						</small>
+					</section>
+					<section>
+						<h3><a href="https://www.npmjs.com/">npm</a></h3>
+						<small style="width: 100%">
+							<i>Node.js package manager</i>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul style="width: 100%">
+								<li>initially for backend JavaScript</li>
+								<li>installed with node</li>
+								<li>dependencies (dev & prod)</li>
+								<li>installed in <code><i>node_modules</i></code></li>
+								<li>npm < 3 : nested dependencies</li>
+								<li>"dependency hell"</li>
+								<li>not acceptable for clientside</li>
+								<li>npm >= 3 : flat dependencies</li>
+							</ul>
+							<ul style="width: 100%; color: red; margin-top: 1em;">
+								<li><a href="http://semver.org/">semver</a>: non deterministic</li>
+								<li>slow: sequential download</li>
+								<li>fat: huge number of dirs / files</li>
+							</ul>
+							<ul style="width: 100%; color: green; margin-top: 1em;">
+								<li>now used everywhere (front or back)</li>
+							</ul>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+<pre><code>npm install</code></pre>
+							<code><b>package.json</b></code>
+<pre><code>{
+  "name": "my_package",
+  "description": "",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "my_dep": "^1.0.0"
+  },
+  "devDependencies" : {
+    "my_test_framework": "^3.1.0"
+  }
+}
+</code></pre>
+							registry: <a href="https://www.npmjs.com/">https://www.npmjs.com/</a>
+<pre><code>npm search lodash
+
+NAME            DESCRIPTION
+lodash          Lodash modular utilities.
+lodash-es       Lodash exported as ES modules.
+</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3><a href="https://bower.io/">bower</a></h3>
+						<small style="width: 100%">
+							<i>A package manager for frontend</i>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul style="width: 100%">
+								<li>for frontend JavaScript</li>
+								<li>install with npm</li>
+								<li>dependencies (dev & prod)</li>
+								<li>installed in <code><i>bower_components</i></code></li>
+								<li>flat dependencies</li>
+							</ul>
+							<ul style="width: 100%; color: green; margin-top: 1em;">
+								<li>one unique version of a dependency</li>
+							</ul>
+							<ul style="width: 100%; color: red; margin-top: 1em;">
+								<li><a href="http://semver.org/">semver</a>: non deterministic</li>
+								<li>conflicts resolution by hand</li>
+								<li>no proper registry (based on github)</li>
+								<li>massive switch to npm / yarn</li>
+							</ul>
+							<br/><br/>
+							<a href="http://frontendbabel.info/articles/bower-why-frontend-package-manager/">Why Front-End Needs a Package Manager</a>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+<pre><code>npm install -g bower</code></pre>
+<pre><code>bower install</code></pre>
+							<code><b>bower.json</b></code>
+<pre><code>{
+  "name": "my_package",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "my_dep": "^1.0.0"
+  },
+  "devDependencies" : {
+    "my_test_framework": "^3.1.0"
+  }
+}
+</code></pre>
+							search: <a href="https://bower.io/search//">https://bower.io/search/</a>
+<pre><code>bower search jquery
+Search results:
+
+    jQuery https://github.com/jquery/jquery.git
+    jquery https://github.com/jquery/jquery-dist.git
+</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3><a href="https://yarnpkg.com/en/">yarn</a></h3>
+						<small style="width: 100%">
+							<i>npm without weaknesses</i>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul style="width: 100%">
+								<li>driven by all major fwk teams</li>
+								<li>based on npm registries</li>
+								<li>no specific manifest (npm)</li>
+								<li>fully compatible with npm</li>
+								<li>offline mode</li>
+								<li>powerfull commands (licences, why, etc.)</li>
+							</ul>
+							<ul style="width: 100%; color: green; margin-top: 1em;">
+								<li>fast(very): parallel download + cloudflare</li>
+								<li>deterministic: lockfile for versions</li>
+								<li>addresses npm security vulnerabilities</li>
+							</ul>
+							<ul style="width: 100%; color: red; margin-top: 1em;">
+								<li>yet another package manager</li>
+							</ul>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+<pre><code>npm install --global yarn</code></pre>
+<a href="https://medium.com/@nikjohn/facebooks-yarn-vs-npm-is-yarn-really-better-1890b3ea6515#.pqs0mv7e6"><img src="images/yarn-perfs.jpg"/></a>
+<a href="https://twitter.com/ag_dubs/status/787039084061523968"><i>"lockfiles = awesome for apps, bad for libs"</i></a>
+<pre><code># THIS IS AN AUTOGENERATED FILE. DO NOT EDIT THIS FILE DIRECTLY.
+# yarn lockfile v1
+package-1@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/package-1/-/package-1-1.0.3.tgz#a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0"
+</code></pre>
+							<ul>
+								<li><a href="https://scotch.io/tutorials/yarn-package-manager-an-improvement-over-npm">yarnpkg: An Improvement over npm</a></li>
+								<li><a href="https://medium.freecodecamp.com/javascript-package-managers-101-9afd926add0a#.karklrb5v">An introduction to how JavaScript package managers work</a></li>
+								<li><a href="https://www.sitepoint.com/yarn-vs-npm/">Yarn versus NPM</a></li>
 							</ul>
 						</small>
 					</section>
 					<section>
 						<h3>Task runners</h3>
+						<small style="width: 100%">
+							<i>Automation of build tasks</i>
+						</small>
 						<small class="logos">
 							<a href="https://docs.npmjs.com/misc/scripts"><img src="images/npm-scripts-logo.jpg"/></a>
 							<a href="https://gruntjs.com/"><img src="images/grunt-logo.jpg"/></a>
 							<a href="http://gulpjs.com/"><img src="images/gulp-logo.jpg"/></a>
 							<a href="http://broccolijs.com/"><img src="images/broccoli-logo.jpg"/></a>
 						</small>
-						<small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul>
+								<li>Running dev server</li>
+								<li>Watching files</li>
+								<li>Running unit tests</li>
+								<li>Linting, quality</li>
+								<li>Preprocessing</li>
+								<li>Transpiling</li>
+								<li>Concatenating files</li>
+								<li>Managing 3rd party libs</li>
+								<li>Optimizing assets</li>
+							</ul>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul style="width: 100%; margin-bottom: 1em;">
+								<li>Minifying source code</li>
+								<li>Compiling</li>
+								<li>Deploying</li>
+								<li>...</li>
+							</ul>
 							<ul>
 								<li><a href="https://medium.com/front-end-developers/task-runner-or-npm-run-scripts-769c8cfbb142#.6v5l1yv4e">Task runner or npm run scripts?</a></li>
 								<li><a href="https://www.anthedesign.fr/developpement-web/tasks-runner-developpeur-front/">Les task runners</a></li>
-								<li><a href="https://blog.cozycloud.cc/technic/2014/06/18/task-runners-comparison/">JS task runner comparison</a></li>
-								<li><a href="https://appendto.com/2015/08/why-use-a-task-runner-like-gulp/">Why use a task runner like Gulp?</a></li>
 								<li><a href="http://jpsierens.com/task-runners-a-comparison-between-grunt-gulp-broccoli-and-mimosa/">Task runners, a comparison between Grunt, Gulp, Broccoli and Mimosa</a></li>
 								<li><a href="http://alfapeople.com/javascript-build-tools-best-practice/">JavaScript Build Tools – Best Practice</a></li>
-								<li><a href="http://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">http://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack</a></li>			
 							</ul>
+						</small>
+					</section>
+					<section>
+						<h3>Task runners: npm scripts</h3>
+						<small style="width: 40%; vertical-align: middle;">
+							<ul>
+								<li>Built-in feature in npm</li>
+								<li>Runs scripts, commands</li>
+								<li>In <i><code>package.json</code>, <code>scripts</code> tag</i></li>
+								<li>Pre and post hooks & commands</li>
+								<li>Via <i><code>npm run-script</code></i></li>
+								<li>Chaining, redirecting, etc.</li>
+								<li>Executing inline scripts</li>
+								<li>Executing script files</li>
+								<li>Passing arguments</li>
+								<li>Custom cli</li>
+							</ul>
+							<br/></br/>
+							<a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">How to use npm as a build tool</a>
+						</small>
+						<small style="width: 58%; vertical-align: middle;">
+<pre><code>  "scripts": {
+    "lint": "jshint **.js",
+    "test": "mocha test/",
+    "clean": "rm -r dist/*",
+    "deploy": "node bin/deploy.js -- --env",
+    "pretest": "npm run clean && npm run lint",
+    "postclean": "echo \"project is now clean\""
+  }</code></pre>
+<pre><code> npm run test
+
+> my-package@0.0.1 pretest ~/my-package
+> npm run clean && npm run lint
+
+> my-package@0.0.1 clean ~/my-package
+> rm -r dist/*
+
+> my-package@0.0.1 postclean ~/my-package
+> echo "project is now clean"
+
+project is now clean
+
+> my-package@0.0.1 lint ~/my-package
+> jshint **.js
+...
+
+> my-package@0.0.1 test ~/my-package
+> mocha tests
+...
+</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3>npm run scripts: caveats</h3>
+						<small style="width: 100%">
+							<i>Complexity, maintanability, reuse. Everything is up to you, ...</i>
+						</small>
+						<img style="width:49%" src="images/gist-npm-scripts-1.jpg"/>
+						<img style="width:49%" src="images/gist-npm-scripts-2.jpg"/>
+						<small style="width: 100%"><a href="https://gist.github.com/jh3y/39125afefa4ad5e6982a">doormat run-scripts</a></small>
+					</section>
+					<section>
+						<h3>Task runners: <a href="https://gruntjs.com/">Grunt</a> / <a href="http://gulpjs.com/">Gulp</a> / <a href="http://broccolijs.com/">Broccoli</a></h3>
+						<small style="width: 40%">
+							<ul>
+								<li>Set of reusable plugins / addons</li>
+								<li>Default behaviour & configuration</li>
+								<li>Simple to use and maintain</li>
+								<li>Easy to learn</li>
+								<li>Based on streams</li>
+								<li>Efficiency & performance</li>
+								<li>You still have to recreate (or copy) for each project</li>
+							</ul>
+<pre><code>var gulp = require('gulp');
+var coffee = require('gulp-coffee');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var sourcemaps = require('gulp-sourcemaps');
+var del = require('del');
+
+var paths = {
+  scripts: ['client/js/**/*.coffee', '!client/external/**/*.coffee'],
+  images: 'client/img/**/*'
+};
+</code></pre>
+						</small>
+						<small style="width: 58%">
+<pre style="margin: 0 auto;"><code style="max-height: 540px;">// Not all tasks need to use streams
+// A gulpfile is just another node program and you can use any package available on npm
+gulp.task('clean', function() {
+  return del(['build']);
+});
+
+gulp.task('scripts', ['clean'], function() {
+  // Minify and copy all JavaScript (except vendor scripts)
+  // with sourcemaps all the way down
+  return gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
+      .pipe(coffee())
+      .pipe(uglify())
+      .pipe(concat('all.min.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('build/js'));
+});
+
+// Copy all static images
+gulp.task('images', ['clean'], function() {
+  return gulp.src(paths.images)
+    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(gulp.dest('build/img'));
+});
+
+// Rerun the task when a file changes
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.images, ['images']);
+});
+
+// The default task (called when you run `gulp` from cli)
+gulp.task('default', ['watch', 'scripts', 'images']);
+</code></pre>
 						</small>
 					</section>
 					<section>
@@ -1220,24 +1519,6 @@ render: function () {
 						</small>
 					</section>
 					<section>
-						<h3>Package managers</h3>
-						<small class="logos" style="width: 100%">
-							<a href="https://www.npmjs.com/"><img src="images/npm-logo.jpg"/></a>
-							<a href="https://bower.io/"><img src="images/bower-logo.jpg"/></a>
-							<a href="https://yarnpkg.com/"><img src="images/yarn-logo.jpg"/></a>
-						</small>
-						<small>
-							<ul>
-								<li><a href="https://www.sitepoint.com/yarn-vs-npm/">Yarn versus NPM</a></li>
-								<li><a href="https://scotch.io/tutorials/yarn-package-manager-an-improvement-over-npm">Yarn Package Manager: An Improvement over npm</a></li>
-								<li><a href="https://www.slant.co/topics/1488/versus/~npm-browserify_vs_yarn_vs_bower">What are the best front-end package managers?</a></li>
-								<li><a href="https://guides.nanobox.io/javascript/vue/package-managers/">YARN, NPM, & BOWER</a></li>
-								<li><a href="https://medium.freecodecamp.com/javascript-package-managers-101-9afd926add0a#.karklrb5v">An introduction to how JavaScript package managers work</a></li>
-								<li><a href="https://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/">Yarn vs npm - The State of Node.js Package Managers</a></li>
-							</ul>
-						</small>
-					</section>
-					<section>
 						<h3>Testing</h3>
 						<small class="logos" style="width: 100%">
 							<a href="https://qunitjs.com/"><img src="images/qunit-logo.jpg"/></a>
@@ -1303,6 +1584,7 @@ render: function () {
 							<a href="https://github.com/facebookincubator/create-react-app">Create React App</a>
 							<a href="http://yeoman.io/"><img src="images/yeoman-logo.jpg"/></a>
 						</small>
+						<a href="https://twitter.com/samselikoff/status/842114559674572802"><img src="images/build-tools-complexity.jpg"/></a>
 					</section>
           			<section>
 						<h3>What else?</h3>
