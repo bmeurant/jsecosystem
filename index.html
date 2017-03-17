@@ -245,7 +245,7 @@
 					</section>
 					<section>
 						<h3>General Libraries</h3>
-						<small style="text-align: left;">
+						<small style="text-align: left; margin-bottom: 1em;">
 							Large libraries extending JavaScript APIs and functions to enrich & standardize the programming model. Unlike frameworks, they are not opinionated about your app's design. 
 							<br/>
 						</small>
@@ -1105,6 +1105,7 @@ render: function () {
 						</small>
 						<small style="width: 49%; vertical-align: middle;">
 							<ul>
+								<li>Manage complexity</li>
 								<li>Efficient & powerful build tools</li>
 								<li>Universal browser support - ES versions</li>
 								<li>Internal modules & components</li>
@@ -1438,7 +1439,7 @@ gulp.task('default', ['watch', 'scripts', 'images']);
 						</small>
 					</section>
 					<section>
-						<h3>JavaScript transpilers</h3>
+						<h3>ES6 to ES5 transpilers</h3>
 						<small class="logos" style="width: 100%">
 							<a href="http://babeljs.io/"><img src="images/babel-logo.jpg"/></a>
 							<a href="https://github.com/google/traceur-compiler"><img src="images/traceur-logo.jpg"/></a>
@@ -1446,14 +1447,30 @@ gulp.task('default', ['watch', 'scripts', 'images']);
 						<small style="width: 100%">
 							<i>"Use next generation JavaScript, today."</i>
 						</small>
-						<small>
+						<small style="width: 49%; text-align: left;">
 							<ul>
-								<li><a href="https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them">JavaScript Transpilers: What They Are & Why We Need Them</a></li>
-								<li><a href="https://medium.com/@ZombieCodeKill/the-a-z-of-javascript-transpilers-2d3d556fa627#.8vafjt18n">The A-Z of JavaScript Transpilers</a></li>
-								<li><a href="https://thenewstack.io/javascript-transpilers-need-know/">What JavaScript Programmers Need to Know about Transpilers</a></li>
-								<li><a href="http://www.discoversdk.com/blog/a-comparison-of-different-javascript-transpilers">A Comparison of Different Javascript Transpilers</a></li>
-								<li><a href="https://hackernoon.com/moving-to-es6-babel-and-transpilers-337921c025b1#.icqcobspe">Moving to ES6 — Babel and Transpilers</a></li>
+								<li>Use modern ES6 features</li>
+								<li>Use ES6 modules</li>
+								<li>Deploy & run ES5 compiled sources</li>
+								<li>No need to wait for universal support</li>
+								<li>Browser compatibility</li>
+								<li>Part of the build process</li>
+								<li>Everything is server-side</li>
+								<li>No overhead</li>
 							</ul>
+							<ul>
+								<li><a href="https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them">JavaScript transpilers what and why</a></li>
+								<li><a href="https://ilikekillnerds.com/2015/01/transpiling-wars-6to5-vs-traceur/">Transpiling Wars: BabelJS vs Traceur</a></li>
+								<li><a href="https://www.jonathan-petitcolas.com/2015/03/09/transpiling-es6-to-es5-using-babel.html">Transpiling EcmaScript6 code to ES5 using Babel</a></li>
+							</ul>
+						</small>
+						<small style="width: 49%">
+<pre><code>npm install babel --save-dev</code></pre>
+							<img style="margin: 5px auto;" src="images/babel-code-1.jpg"/>
+							<img style="margin: 5px auto;" src="images/babel-code-2.jpg"/>
+							<img style="margin: 5px auto;" src="images/babel-code-3.jpg"/>
+							<img style="margin: 5px auto;" src="images/babel-code-4.jpg"/>
+							<img style="margin: 5px auto;" src="images/babel-code-5.jpg"/>
 						</small>
 					</section>
 					<section>
@@ -1464,39 +1481,156 @@ gulp.task('default', ['watch', 'scripts', 'images']);
 							<a href="https://github.com/umdjs/umd"><b>UMD</b></a>
 							<a href="http://www.2ality.com/2014/09/es6-modules-final.html"><img src="images/es6-modules-logo.jpg"/></a>
 						</small>
-						<small>
+						<small style="width: 100%;"><i>Module: named and reusable piece of code</i></small>
+						<small style="width: 49%; vertical-align: middle;">
+							<ul>
+								<li>Reusability by importing</li>
+								<li>Namespacing to limit conflicts</li>
+								<li>Maintanability by separating concerns</li>
+								<li>Before ES6: no native support for modules</li>
+								<li>Global scope or global objects</li>
+<pre><code>window.$ = function() { ... };
+var App = {};
+App.Models = {};
+</code></pre>
+								<li>Module formats to the rescue</li>
+							</ul>
+<b>AMD</b>: for browser, parallelisation, verbosity
+<pre><code>define(['dependencyA', 'dependencyB', function(dependencyA, dependencyB) {
+  return {
+    doSomething: dependencyA.foo() + dependencyB.foo();
+  }
+});
+</code></pre>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
+							<b>CommonJS</b>: for Node.js only, straightforward
+<pre><code>var dependencyA = require('dependencyA');
+var dependencyB = require('dependencyB');
+
+module.exports = {
+  doSomething: dependencyA.foo() + dependencyB.foo()
+};
+</code></pre>
+							<b>UMD</b>: attempt of reunification
+<pre><code>(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(['dependencyA', 'dependencyB'], factory);
+  } else if (typeof exports === 'object') {
+    // Node, CommonJS-like
+    module.exports = factory(require('dependencyA'), require('dependencyB'));
+  } else {
+    // Browser globals (root is window)
+    root.returnExports = factory(root.dependencyA, root.dependencyB);
+  }
+}(this, function (dependencyA, dependencyB) {
+    doSomething: dependencyA.foo() + dependencyB.foo()
+}));
+</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3>ES6 Modules</h3>
+						<small style="width: 50%; text-align: left;">
+							<ul>
+								<li>JavaScript native modules</li>
+								<li>Module definition is straightforward</li>
+								<li>default or named exports</li>
+								<li>Import any exported element</li>
+								<li style="color: red">Browser: transpilers, bundlers & loaders</li>
+							</ul>
 							<ul>
 								<li><a href="http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/">What is AMD, CommonJs and UMD?</a></li>
-								<li><a href="https://www.sitepoint.com/javascript-modules-bundling-transpiling/">JavaScript modules: Bundling and transpiling</a></li>
 								<li><a href="https://cloudfour.com/thinks/module_bunders_part_1/">Unpacking module bundlers Part 1: What is a module?</a></li>
 								<li><a href="https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.sqz5wmfjk">JavaScript modules: A beginner's guide</a></li>
 								<li><a href="https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules">The mind boggling universe of JavaScript modules</a></li>
 								<li><a href="https://addyosmani.com/writing-modular-js/">Writing Modular JavaScript With AMD, CommonJS & ES Harmony</a></li>
-								<li><a href="http://www.2ality.com/2014/09/es6-modules-final.html">ECMAScript 6 modules: the final syntax</a></li>
-								<li><a href="http://tomdale.net/2012/01/amd-is-not-the-answer/">AMD is not the answer</a></li>
 							</ul>
+						</small>
+						<small style="width: 48%; text-align: left;">
+<pre><code>// zoo.js
+export let Dog = function (name) {
+  this.talk = function() {
+    return `${name}: Woof Woof`;
+  };
+};
+
+export let Wolf = function (name) {
+  this.talk = function() {
+    return `${name}: WoooooooW`;
+  };
+};
+
+export default {Dog, Wolf};
+</code></pre>
+<pre><code>// main.js
+import Zoo, { Dog, Wolf } from './zoo';
+
+let myDog = new Dog('Sherlock');
+console.log(myDog.talk()); // Sherlock: Woof Woof
+
+let myWolf = new Wolf('Werewolf');
+console.log(myWolf.talk()); // Werewolf: WooooooW
+
+let otherDog = new Zoo.Dog('Snoopy');
+console.log(otherDog.talk()); // Snoopy: Woof Woof
+</code></pre>
 						</small>
 					</section>
 					<section>
 						<h3>JavaScript module loaders & bundlers</h3>
 						<small class="logos" style="width: 100%">
 							<a href="http://requirejs.org/"><img src="images/requirejs-logo.jpg"/></a>
-							<a href="https://github.com/systemjs/systemjs"><b>SystemJS</b></a>
 							<a href="http://browserify.org/"><img src="images/browserify-logo.jpg"/></a>
 							<a href="https://webpack.js.org/"><img src="images/webpack-logo.jpg"/></a>
 							<a href="https://rollupjs.org/"><img src="images/rollup-logo.jpg"/></a>
 						</small>
-						<small>
+						<small style="width: 100%">
+							<i>Resolve & load modules and dependencies</i>
+						</small>
+						<small style="width: 49%">
 							<ul>
-								<li><a href="https://webpack.github.io/docs/comparison.html">Module bundlers comparison</a></li>
-								<li><a href="https://www.linkedin.com/pulse/forget-browserify-webpack-embrace-rollupjs-michel-ruffieux">Forget Browserify, Webpack, embrace RollupJs</a></li>
+								<li>Loader: at runtime / Bundler: at build time</li>
+								<a href="https://webpack.github.io/docs/comparison.html"><img src="images/loaders-bundlers.jpg"/></a>
+								<li><a href="https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.gm76lakjl">Webpack</a> is leader at the moment</li>
+							</ul>
+							<ul>
 								<li><a href="https://mattdesl.svbtle.com/browserify-vs-webpack">Browserify versus Webpack</a></li>
 								<li><a href="https://medium.com/@gimenete/how-javascript-bundlers-work-1fc0d0caf2da#.3znnzvr4c">How JavaScript bundlers work</a></li>
-								<li><a href="http://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/">A 10 minutes primer to JavaScript module loaders and module bundlers</a></li>
-								<li><a href="https://medium.com/@sungyeol.choi/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde#.n5gpgdtmu">Brief history of JavaScript Modules</a></li>
-								<li><a href="https://appendto.com/2016/06/the-short-history-of-javascript-module-loaders/">History and Background of JavaScript Module Loaders</a></li>
 								<li><a href="https://medium.freecodecamp.com/javascript-modules-part-2-module-bundling-5020383cf306#.nbulfnw9y">JavaScript Modules Part 2: Module Bundling</a></li>
 							</ul>
+						</small>
+						<small style="width: 49%">
+<pre style="margin: 0 auto;"><code>npm install webpack -g</code></pre>
+<pre style="margin: 10px auto;"><code>module.exports = {
+  entry: "./app.js",
+  output: {
+    filename: "bundle.js"
+  },
+  module: {
+   loaders: [
+     {
+       test: /\.es6$/,
+       exclude: /node_modules/,
+       loader: 'babel-loader',
+       query: {
+         presets: ['react', 'es2015'] 
+       }
+     }
+   ]
+ },
+ resolve: {
+   extensions: ['', '.js', '.es6']
+ }
+}
+</code></pre>
+<pre style="margin: 10px auto;"><code># Debug mode
+webpack
+ 
+# Production mode (minified version)
+webpack -p
+</code></pre>
 						</small>
 					</section>
 					<section>
@@ -1603,25 +1737,6 @@ gulp.task('default', ['watch', 'scripts', 'images']);
 								<li><a href="https://www.quora.com/Should-I-learn-CoffeeScript-TypeScript-or-Dart">Should I learn Coffeescript, Typescript or Dart?</a></li>
 								<li><a href="https://fr.slideshare.net/NeilGreen1/type-script-vs-coffeescript-vs-es6">Typescript vs Coffeescript vs ES6</a></li>
 								<li><a href="https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS">List of languages that compile to JS</a></li>
-							</ul>
-						</small>
-					</section>
-					<section>
-						<h3>JavaScript on mobile</h3>
-						<small>
-							<i>Native scripts and offline first</i>
-						</small>
-						<small class="logos" style="width: 100%">
-							<a href="https://facebook.github.io/react-native/"><img src="images/reactnative-logo.jpg"/></a>
-							<a href="https://www.nativescript.org/"><img src="images/nativescript-logo.jpg"/></a>
-							<a href="https://www.xamarin.com/"><img src="images/xamarin-logo.jpg"/></a>
-							<a href="https://pouchdb.com/"><img src="images/pouchdb-logo.jpg"/></a>
-						</small>
-						<small>
-							<ul>
-								<li><a href="http://www.daffodilsw.com/blog/mobile-wars-ii-attack-of-the-hybrid-apps/">Mobile Wars II – Attack of the Hybrid Apps</a></li>
-								<li><a href="https://blog.couchbase.com/couchbase-mobile-in-a-cross-platform-telerik-nativescript-app/">Couchbase Mobile in a Cross Platform Telerik NativeScript App</a></li>
-								<li><a href="https://www.sitepoint.com/building-offline-first-app-pouchdb/">Building an Offline First App with PouchDB</a></li>
 							</ul>
 						</small>
 					</section>
