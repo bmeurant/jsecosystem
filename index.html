@@ -1640,14 +1640,146 @@ webpack -p
 							<a href="http://lesscss.org/"><img src="images/less-logo.jpg"/></a>
 							<a href="http://stylus-lang.com/"><img src="images/stylus-logo.jpg"/></a>
 						</small>
-						<small>
+						<small style="width: 100%">
+							<i>Superset of CSS, compiled to CSS during build</i>
+						</small>
+						<small style="width: 25%; text-align: left;">
+								<b>variables</b>
+<pre style="margin-top: 0;"><code>$base-color: #0066A1;
+
+body {
+  color: $base-color;
+}
+</code></pre>
+								<b>nesting</b>
+<pre style="margin-top: 0;"><code>section { 
+  .logos {
+    & > * {
+      margin: .25em auto;
+    }
+
+    img {
+      height: 55px;
+    }
+  }
+}
+</code></pre>
+								<b>imports</b>
+<pre style="margin-top: 0;"><code>@import 'variables';
+
+body {
+  font: 100% $base-font;
+}
+</code></pre>
+						</small>
+						<small style="width: 39%; text-align: left;">
+							<b>mixins</b>
+<pre style="margin-top: 0;"><code>@mixin my-border($color, $width: 1px) {
+  border: $width solid $color;
+}
+
+p { @include my-border(blue, 2px); }
+</code></pre>
+							<b>inheritance</b>
+<pre style="margin-top: 0;"><code>.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+</code></pre>
+							<b>structures & control</b>
+<pre style="margin-top: 0;"><code>@each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em) {
+  #{$header} {
+    font-size: $size;
+  }
+}
+</code></pre>
+						</small>
+						<small style="width: 33%; text-align: left;">
+<pre><code>$i: 6;
+@while $i > 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
+}
+</code></pre>
+							<b>operators & functions</b>
+<pre style="margin-top: 0;"><code>p {
+  width: 1em + (2em * 3);
+  color: lighten($base-color, 20%);
+}</code></pre>
+							<b>build with gulp</b>
+<pre style="margin-top: 0;"><code>var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+gulp.task('styles', function() {
+    gulp.src('sass/**/*.scss')
+        .pipe(gulp.dest('./css/'));
+});
+</code></pre>
+						</small>
+					</section>
+					<section>
+						<h3>Sass preprocessor</h3>
+						<small style="width: 100%">
+							Generated CSS
+						</small>
+						<small style="width: 49%">
+<pre><code>body {
+  font: 100% Helvetica, sans-serif; }
+
+body {
+  color: #0066A1; }
+
+section .logos > * {
+  margin: .25em auto; }
+section .logos img {
+  height: 55px; }
+
+p {
+  border: 2px solid blue; }
+
+.message, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border-color: green; }
+</code></pre>
+						</small>
+						<small style="width: 49%">
+<pre><code>h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.2em; }
+
+p {
+  width: 7em;
+  color: #08a4ff; }
+
+.item-6 {
+  width: 12em; }
+
+.item-4 {
+  width: 8em; }
+
+.item-2 {
+  width: 4em; }
+</code></pre>
+						</small>
+						<small style="width: 100%">
 							<ul>
-								<li><a href="https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus">An Introduction to CSS Pre-Processors: SASS, LESS and Stylus</a></li>
-								<li><a href="http://learn.shayhowe.com/advanced-html-css/preprocessors/">Preprocessors</a></li>
+								<li><a href="https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus">An Introduction to CSS Pre-Processors</a></li>
 								<li><a href="https://www.urbaninsight.com/2012/04/12/ten-reasons-you-should-be-using-css-preprocessor">Ten Reasons You Should Be Using a CSS Preprocessor</a></li>
-								<li><a href="https://blog.codepen.io/documentation/editor/using-css-preprocessors/">Using CSS Preprocessors</a></li>
-								<li><a href="http://www.456bereastreet.com/archive/201603/why_i_dont_use_css_preprocessors/">Why I don’t use CSS preprocessors</a></li>
-								<li><a href="https://meiert.com/en/blog/20161214/no-css-preprocessors/">Why I Don’t Use CSS Preprocessors</a></li>
 								<li><a href="https://www.codeschool.com/beginners-guide-to-web-development/css-preprocessors-and-frameworks">CSS Preprocessors and Frameworks</a></li>
 							</ul>
 						</small>
