@@ -2027,8 +2027,49 @@ installing
 							<a href="https://www.typescriptlang.org/"><img src="images/typescript-logo.jpg"/></a>
 							<a href="http://elm-lang.org/"><img src="images/elm-logo.jpg"/></a>
 						</small>
-						<small>
+						<small style="width: 28%; text-align: left; vertical-align: middle;">
+							<b>Typescript:</b><br/>
 							<ul>
+								<li>Static typing</li>
+								<li>Classes & Interfaces</li>
+								<li>Enums & Generics</li>
+								<li>Modules</li>
+							</ul>
+							<br/><br/>
+							<b>Coffeescript:</b><br/>
+							<ul>
+								<li>Syntaxic sugar</li>
+								<li>Inpired by Python, Ruby</li>
+							</ul>
+							<br/><br/>
+							<b>Elm:</b><br/>
+							<ul>
+								<li>Functional programming</li>
+							</ul>
+						</small>
+						<small style="width: 70%; vertical-align: middle;">
+<pre><code>class Student {
+    fullName: string;
+    constructor(public firstName, public middleInitial, public lastName) {
+        this.fullName = firstName + " " + middleInitial + " " + lastName;
+    }
+}
+
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+var user = new Student("Jane", "M.", "User");
+
+document.body.innerHTML = greeter(user);
+</code></pre>
+							<ul>
+								<li><a href="http://tutorialzine.com/2016/07/learn-typescript-in-30-minutes/">Learn Typescript in 30 minutes</a></li>
 								<li><a href="https://blog.heapanalytics.com/goodbye-coffeescript-hello-typescript/">Goodbye Coffeescript, Hello Typescript</a></li>
 								<li><a href="https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS">List of languages that compile to JS</a></li>
 							</ul>
@@ -2036,14 +2077,32 @@ installing
 					</section>
 					<section>
 						<h3>Future</h3>
-						<small class="logos" style="width: 100%">
+						<small style="width: 100%">
+							<a href="http://webassembly.org/"><b>Webassembly</b></a>
+						</small>
+						<small style="width: 49%; vertical-align: middle;">
 							<ul>
-								<li>Webassembly</li>
+								<li>Write in any language</li>
+								<li>Compiles in wasm binary format</li>
+								<li>Browsers understand & execute wasm</li>
+								<li>Performances (fetching, parsing, executing)</li>
+								<li>Fully compatible with JavaScript</li>
+								<li>Load wasm modules in JavaScript</li>
 							</ul>
 						</small>
-						<small>
+						<small style="width: 49%; vertical-align: middle;">
+							<a href="https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/"><img src="images/webassembly.jpg"/></a>
+						</small>
+						<small style="width: 59%">
 							<ul>
-								<li></li>
+								<li><a href="https://medium.com/mozilla-tech/why-webassembly-is-a-game-changer-for-the-web-and-a-source-of-pride-for-mozilla-and-firefox-dda80e4c43cb#.uybgfw3cz">Why WebAssembly is a game changer for the web</a></li>
+								<li><a href="https://hacks.mozilla.org/2017/02/a-cartoon-intro-to-webassembly/">A series of posts by Lin Clark</a></li>
+							</ul>
+						</small>
+						<small style="width: 40%">
+							<ul>
+								<li><a href="https://medium.com/javascript-scene/why-we-need-webassembly-an-interview-with-brendan-eich-7fb2a60b0723#.xemjanx0f">Why we need webassembly</a></li>
+								<li><a href="https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6#.s8lvqgifk">What is webassembly?</a></li>
 							</ul>
 						</small>
 					</section>
