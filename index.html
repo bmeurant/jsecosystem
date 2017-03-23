@@ -36,6 +36,10 @@
 				</section>
 				<section>
 					<h2>Who am I?</h2>
+					<small>
+						<i>Developer, architect & technical director of unit "Ministries and Administrations" at <a href="http://worldline.com">Wordline</a></i>
+					</small>
+					<a href="http://worldline.com"><img src="images/worldline.jpg"/></a>
 				</section>
 				<section>
 					<section>
@@ -132,6 +136,7 @@
 						<small>
 							<ul>
 								<li><a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/</a></li>
+								<li><a href="http://es6-features.org/">ES6 Features</a></li>
 						</small>
 					</section>
 					<section>
@@ -1011,7 +1016,12 @@ var app = app || {};
   <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 </footer>
 
-<!-- //app/templates/components/todo-list.hbs -->
+<!-- app/templates/index.hbs -->
+{{#if model.length}}
+  {{todo-list todos=model}}
+{{/if}}
+
+<!-- app/templates/components/todo-list.hbs -->
 {{#if todos.length}}
   {{#if canToggle}}
     <input type="checkbox" id="toggle-all" checked={{allCompleted}} onchange={{action 'toggleAll'}}>
